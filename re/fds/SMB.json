@@ -1,0 +1,98 @@
+{
+    "info": {
+        "manufacturer": {
+            "en": "Nintendo",
+            "jp": "\u4efb\u5929\u5802"
+        },
+        "game_name": "SMB",
+        "game_type": " ",
+        "game_version": 0,
+        "side_number": 0,
+        "disk_number": 0,
+        "disk_type": "normal",
+        "unknown0": 0,
+        "boot_file": 15,
+        "unknown1": 1099511627775,
+        "manufature_date": "1986-7-23",
+        "country_code": 73,
+        "unknown2": 97,
+        "unknown3": 0,
+        "unknown4": 512,
+        "unknown5": 2533366528,
+        "rewrite_date": "1986-7-23",
+        "unknown6": 255,
+        "unknown7": 255,
+        "serial_nr": 65535,
+        "unknown8": 255,
+        "rewrites": 0,
+        "disk_side": 0,
+        "unknown": 0,
+        "price": 0
+    },
+    "files": [
+        {
+            "file_nr": 0,
+            "file_id": 0,
+            "filename": "KYODAKU-",
+            "ram_addr": 10240,
+            "size": 224,
+            "type": "NT"
+        },
+        {
+            "file_nr": 1,
+            "file_id": 1,
+            "filename": "SM2CHAR1",
+            "ram_addr": 0,
+            "size": 8192,
+            "type": "CHR"
+        },
+        {
+            "file_nr": 2,
+            "file_id": 16,
+            "filename": "SM2CHAR2",
+            "ram_addr": 1888,
+            "size": 64,
+            "type": "CHR"
+        },
+        {
+            "file_nr": 3,
+            "file_id": 5,
+            "filename": "SM2MAIN ",
+            "ram_addr": 24576,
+            "size": 32768,
+            "type": "PRG"
+        },
+        {
+            "file_nr": 4,
+            "file_id": 32,
+            "filename": "SM2DATA2",
+            "ram_addr": 50288,
+            "size": 3631,
+            "type": "PRG"
+        },
+        {
+            "file_nr": 5,
+            "file_id": 48,
+            "filename": "SM2DATA3",
+            "ram_addr": 50640,
+            "size": 3279,
+            "type": "PRG"
+        },
+        {
+            "file_nr": 6,
+            "file_id": 64,
+            "filename": "SM2DATA4",
+            "ram_addr": 49844,
+            "size": 3916,
+            "type": "PRG"
+        },
+        {
+            "file_nr": 7,
+            "file_id": 15,
+            "filename": "SM2SAVE ",
+            "ram_addr": 53919,
+            "size": 1,
+            "type": "PRG"
+        }
+    ]
+}
