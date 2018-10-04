@@ -1,1 +1,1 @@
-python ../badassm/badassm.py fixed.asm && cat ines.bin fixed.bin fds/SM2CHAR1.CHR > fixed.nes
+python badassm/badassm.py core.asm && cat ines.bin core.bin re/fds/SM2CHAR1.CHR > fixed.nes

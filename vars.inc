@@ -5,13 +5,14 @@ FDS_CONTROL  = $4024
 FDS_DISK_STATUS = $4030
 FDS_DRIVE_STATUS = $4032
 
-FdsOperTask = $07FC			; SMB2J
-WaitForIRQ = $077B			; SMB2J
-LoadListIndex = $07f7		; SMB2J
-IsPlayingLuigi = $0753		; SMB2J
-FdsBiosIrqAction = $101		; SMB2J
-FdsLastWrite4025 = $fa		; SMB2J
-UseNtBase2400 = $77a		; SMB2J
+FdsOperTask = $07FC				; SMB2J
+WaitForIRQ = $077B				; SMB2J
+LoadListIndex = $077f			; SMB2J
+IsPlayingLuigi = $0753			; SMB2J
+FdsBiosIrqAction = $101			; SMB2J
+FdsLastWrite4025 = $fa			; SMB2J
+UseNtBase2400 = $77a			; SMB2J
+IsPlayingExtendedWorlds = $7FB	; SMB2J
 
 GameTimerDisplay_OBSOLETE = $07f8
 
@@ -67,7 +68,6 @@ byte_7A9 = $7a9
 byte_7F6 = $7f6
 byte_7F9 = $7f9
 byte_7FA = $7fa
-byte_7FB = $7fb
 byte_7E7 = $7e7
 byte_7E8 = $7e8
 byte_7EC = $7ec
