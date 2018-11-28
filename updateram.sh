@@ -1,1 +1,1 @@
-python ../badassm/badassm.py ram_region.asm && python genram.py
+python badassm/badassm.py ram_region.asm && python genram.py

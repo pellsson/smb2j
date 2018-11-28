@@ -7,7 +7,7 @@ FDS_DRIVE_STATUS = $4032
 
 FdsOperTask = $07FC				; SMB2J
 WaitForIRQ = $077B				; SMB2J
-LoadListIndex = $077f			; SMB2J
+LoadListIndex = $07f7			; SMB2J
 IsPlayingLuigi = $0753			; SMB2J
 FdsBiosIrqAction = $101			; SMB2J
 FdsLastWrite4025 = $fa			; SMB2J

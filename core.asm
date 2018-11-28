@@ -4519,11 +4519,6 @@ GameCoreRoutine_RW:
 		rts
 
 GameEngine:
-lda GamePauseStatus
-lsr
-bcc FUCKHACK
-rts
-FUCKHACK:
 		jsr ProcFireball_Bubble
 		ldx #0
 ProcELoop:
@@ -10254,10 +10249,8 @@ loc_9DBC:
 		lda #0
 		sta BowserGfxFlag
 locret_9DF0:
-
 		rts
 sub_9DF1:
-
 		inc BowserGfxFlag
 		jsr RunRetainerObj
 		lda $1E,x
@@ -10266,6 +10259,7 @@ sub_9DF1:
 		sta $49A,x
 		jsr GetEnemyBoundBox
 		jmp PlayerEnemyCollision
+
 FlameTimerData:
 		.db $BF
 		.db $40
@@ -10275,8 +10269,8 @@ FlameTimerData:
 		.db $40
 		.db $40
 		.db $BF
-sub_9E0E:
 
+sub_9E0E:
 		ldy BowserFlameTimerCtrl
 		inc BowserFlameTimerCtrl
 		lda BowserFlameTimerCtrl
@@ -10284,10 +10278,9 @@ sub_9E0E:
 		sta BowserFlameTimerCtrl
 		lda FlameTimerData,y
 locret_9E1F:
-
 		rts
-ProcBowserFlame:
 
+ProcBowserFlame:
 		lda TimerControl
 		bne loc_9E55
 		lda #$40
@@ -10295,7 +10288,6 @@ ProcBowserFlame:
 		beq loc_9E2E
 		lda #$60
 loc_9E2E:
-
 		sta TMP_0
 		lda $401,x
 		sec
@@ -10315,7 +10307,6 @@ loc_9E2E:
 		adc $434,x
 		sta Enemy_Y_Position,x
 loc_9E55:
-
 		jsr RelativeEnemyPosition
 		lda Enemy_State,x
 		bne locret_9E1F
@@ -10327,12 +10318,10 @@ loc_9E55:
 		beq loc_9E6A
 		ldy #$82
 loc_9E6A:
-
 		sty TMP_1
 		ldy $6E5,x
 		ldx #0
 loc_9E71:
-
 		lda Enemy_Rel_YPos
 		sta $200,y
 		lda TMP_0
@@ -10362,7 +10351,6 @@ loc_9E71:
 		lda #$F8
 		sta $20C,y
 loc_9EAC:
-
 		pla
 		lsr
 		pha
@@ -10370,7 +10358,6 @@ loc_9EAC:
 		lda #$F8
 		sta $208,y
 loc_9EB6:
-
 		pla
 		lsr
 		pha
@@ -10378,17 +10365,15 @@ loc_9EB6:
 		lda #$F8
 		sta $204,y
 loc_9EC0:
-
 		pla
 		lsr
 		bcc locret_9EC9
 		lda #$F8
 		sta $200,y
 locret_9EC9:
-
 		rts
-RunFireworks:
 
+RunFireworks:
 		dec ExplosionTimerCounter,x
 		bne loc_9EDA
 		lda #8
@@ -10398,7 +10383,6 @@ RunFireworks:
 		cmp #3
 		bcs loc_9EF2
 loc_9EDA:
-
 		jsr RelativeEnemyPosition
 		lda Enemy_Rel_YPos
 		sta Fireball_Rel_YPos
@@ -10409,7 +10393,6 @@ loc_9EDA:
 		jsr DrawExplosion_Fireworks
 		rts
 loc_9EF2:
-
 		lda #0
 		sta $F,x
 		lda #8
@@ -10417,6 +10400,7 @@ loc_9EF2:
 		lda #5
 		sta byte_138
 		jmp EndAreaPoints_MAYBE
+
 StarFlagYPosAdder:
 		.db 0
 		.db 0
@@ -10432,8 +10416,8 @@ StarFlagTileData:
 		.db $55
 		.db $56
 		.db $57
-RunStarFlagObj:
 
+RunStarFlagObj:
 		lda #0
 		sta EnemyFrenzyBuffer
 		lda StarFlagTaskControl
@@ -10445,8 +10429,8 @@ RunStarFlagObj:
 		.dw GameTimerFireworks
 		.dw RaiseFlagSetoffFWorks
 		.dw DelayToAreaEnd
-GameTimerFireworks_NEW:
 
+GameTimerFireworks_NEW:
 		lda byte_7EE
 		cmp byte_7E8
 		bne loc_9F3F
@@ -10456,72 +10440,63 @@ GameTimerFireworks_NEW:
 		lda #3
 		bne loc_9F43
 loc_9F39:
-
 		ldy #0
 		lda #6
 		bne loc_9F43
 loc_9F3F:
-
 		ldy #0
 		lda #$FF
 loc_9F43:
-
 		sta FireworksCounter
 		sty $1E,x
 loc_9F48:
-
 		inc StarFlagTaskControl
 StarFlagExit:
-
 		rts
-GameTimerFireworks:
 
+GameTimerFireworks:
 		lda byte_7EC
 		ora byte_7ED
 		ora byte_7EE
 		beq loc_9F48
 sub_9F57:
-
 		lda FrameCounter
 		and #4
 		beq loc_9F61
 		lda #$10
 		sta Square2SoundQueue
 loc_9F61:
-
 		ldy #$17
 		lda #$FF
 		sta byte_139
 		jsr DigitsMathRoutine
 		lda #5
 		sta byte_139
-EndAreaPoints_MAYBE:
 
+EndAreaPoints_MAYBE:
 		ldy #$B
 		jsr DigitsMathRoutine
 		lda #2
 		jmp UpdateNumber
-RaiseFlagSetoffFWorks:
 
+RaiseFlagSetoffFWorks:
 		lda Enemy_Y_Position,x
 		cmp #$72
 		bcc loc_9F85
 		dec $CF,x
 		jmp DrawStarFlag
 loc_9F85:
-
 		lda FireworksCounter
 		beq loc_9FC2
 		bmi loc_9FC2
 		lda #$16
 		sta EnemyFrenzyBuffer
-DrawStarFlag:
 
+DrawStarFlag:
 		jsr RelativeEnemyPosition
 		ldy $6E5,x
 		ldx #3
 loc_9F99:
-
 		lda Enemy_Rel_YPos
 		clc
 		adc StarFlagYPosAdder,x
@@ -10551,18 +10526,17 @@ loc_9FCA:
 
 		inc StarFlagTaskControl
 		rts
-DelayToAreaEnd:
 
+DelayToAreaEnd:
 		jsr DrawStarFlag
 		lda EnemyIntervalTimer,x
 		bne locret_9FDB
 		lda EventMusicBuffer
 		beq loc_9FCA
 locret_9FDB:
-
 		rts
-MovePiranhaPlant:
 
+MovePiranhaPlant:
 		lda Enemy_State,x
 		bne loc_A03D
 		lda EnemyFrameTimer,x
